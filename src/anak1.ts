@@ -15,8 +15,6 @@ class Anak1 extends Induk implements AktifitasPagi, AktifitasSiang {
   }
 }
 
-let a = new Anak1();
-console.log(a.getData());
-console.log(a.getData2());
-a.makan();
-a.tidur();
+let a = new Anak1();               //? Bentuk dari diri sendiri
+let b: AktifitasPagi = new Anak1();       //? bentuk dari interface
+let c: Induk = new Anak1();           //? bentuk dari class lain
