@@ -1,3 +1,3 @@
-class SuperInduk {
+export class SuperInduk {
 
 }
