@@ -1,21 +1,34 @@
-/**
- * TODO:: 1. Dalam sebuah Class di Tscript tidak boleh ada keyword : let, const, function
- */
-class Manusia {
-  nama: string = "Ma'mun";
+class Induk {
+  namaInduk: string = "Ma'mun Ramdhan";
 
-  getNama(): string {
-    return this.nama;
+  getAlamat(): string {
+    return "Jalan Induk Raya"
   }
 }
 
-/**
- * ? orang1 adalah instance/object dari class Manusia
- */
-let orang1 = new Manusia();
+class Anak extends Induk {
 
-console.log(orang1.getNama());
+  getNamaInduk(): string {
+    return this.namaInduk;
+  }
 
+  /**
+   * @returns Fungsi getAlamat() yang dioverride dari induknya
+   */
+  getAlamat(): string {
+    return "Jalan Raya Anak";
+  }
 
+  /**
+   * ? Memanggil fungsi dari induk yang sempat di override
+   * TODO:: Gunakan keyword super
+   */
+  getAlamatInduk(): void {
+    console.log(super.getAlamat());
+  }
+}
 
-
+let a = new Anak();
+console.log(a.getNamaInduk());
+console.log(a.getAlamat());
+console.log(a.getAlamatInduk());
