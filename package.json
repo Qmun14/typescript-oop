@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "ts-node src/anak1.ts "
+    "start": "tsc && node dist/anak1.js "
   },
   "devDependencies": {
     "ts-node": "^10.9.1",
