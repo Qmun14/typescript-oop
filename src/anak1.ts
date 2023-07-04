@@ -1,20 +1,22 @@
 import { Induk } from "./induk";
 
-class Anak1 extends Induk implements AktifitasPagi, AktifitasSiang {
+class Anak1 extends Induk {
 
-  getData2(): string {
-    return "Data Abstract";
+  /**
+   * Untuk di typescript bisa menyederhanakan sebuah variabel bisa dimasukkan  ke dalam constructor asalkan modifier nya selain public
+   * @param nama 
+   * @param umur 
+   */
+  constructor(readonly nama: string, protected umur: number) {
+    super();
+
   }
 
-  makan(): void {
-    console.log("Makan Pagi");
-  }
-
-  tidur(): void {
-    console.log("Tidur Siang");
+  getDataFromInduk(): void {
+    super.getData();
+    this.umur;
   }
 }
 
-let a = new Anak1();               //? Bentuk dari diri sendiri
-let b: AktifitasPagi = new Anak1();       //? bentuk dari interface
-let c: Induk = new Anak1();           //? bentuk dari class lain
+let a = new Anak1('Mamun Ramdhan', 30);
+console.log(a);
